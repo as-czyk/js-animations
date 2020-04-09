@@ -19,7 +19,7 @@ const oneMinute = 1000 * 60
 getTimeToEnd = () => {
 
     let dateNow = new Date()
-    let dateEnd = new Date(Date.now() + oneDay * 239)
+    let dateEnd = new Date(Date.now() + oneDay * 238)
 
     let diff = dateEnd - dateNow;
     

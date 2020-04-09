@@ -2,6 +2,10 @@
 @import url(../src-css-animations/components/close.css);
 @import url(../src-css-animations/components/shadow.css);
 @import url(../src-css-animations/components/flipcard.css);
+@import url(../src-css-animations/components/type.css);
+@import url(../src-css-animations/components/toggle.css);
+@import url(../src-css-animations/components/progress.css);
+@import url(../src-css-animations/components/hamburger.css);
 
 /* Typography Rules */ 
 
