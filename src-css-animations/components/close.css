@@ -1,0 +1,45 @@
+.close__button {
+    background: #881238;
+    box-shadow: 0px 4px 12px rgba(136, 18, 56, 0.15);
+    border-radius: 80px;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.close__button:hover {
+    background: #EE4540;
+    box-shadow: 0px 4px 12px rgba(136, 18, 56, 0.15)
+}
+
+.close__button svg {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform-origin: center center;
+    transform: translate(-50%, -50%);
+    transition: 350ms ease;
+}
+
+.close__button:hover svg {
+    transform: translate(-50%, -50%) rotate(180deg)
+}
+
+.close__button:hover path {
+    stroke: #ffffff;
+}
+
+.close__button__linear svg {
+    transition: 350ms linear;
+}
+
+.close__button__fast svg {
+    transition: 350ms ease;
+}
+
+.close__button__fast:hover svg {
+    transform: translate(-50%, -50%) rotate(360deg)
+
+}

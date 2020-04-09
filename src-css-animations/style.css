@@ -1,0 +1,123 @@
+@import url(../src-css-animations/components/swiggle.css);
+@import url(../src-css-animations/components/close.css);
+@import url(../src-css-animations/components/shadow.css);
+@import url(../src-css-animations/components/flipcard.css);
+
+/* Typography Rules */ 
+
+body {
+    background-color: #444;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Layout Rules*/
+.main__container {
+    display: grid;
+    border: 1px solid red;
+    width: 80vw;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 140px 300px repeat(2, 1fr) 100px;
+    grid-template-areas: 
+    "hd hd hd"
+    "ts ts ts"
+    "main1 main1 main1"
+    "main2 main2 main2"
+    "ft ft ft";
+    background-color: #fff;
+}
+
+.header__container {
+    grid-area: hd;
+    margin: 10px;
+    border: 1px solid red
+}
+
+.nav__container {
+    grid-area: nav;
+    margin: 10px
+}
+
+.teaser__container {
+    grid-area: ts;
+    border: 1px solid red;
+    margin: 10px;
+}
+
+.css__container {
+    grid-area: main1;
+    border: 1px solid red;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.js__container {
+    grid-area: main2;
+    border: 1px solid red;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.ft__container {
+    grid-area: ft;
+    border: 1px solid red;
+    margin: 10px;
+}
+
+/* Theme Style */
+.nav__container ul li {
+    list-style: none;
+    font-size: 25px;
+}
+
+#navbar__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+/* Content Boxes */
+.animation__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 35vh;
+    border: 1px solid red;
+    margin: 5px;
+}
+
+.animation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 80%
+}
+
+.description__box {
+    justify-self: end;
+    height: 20%;
+    margin-top: auto;
+    margin-bottom: 30px;
+}
+
+.description__heading {
+    border-bottom: 2px solid black;
+
+}
+
+.placeholder__box {
+    height: 70px;
+}

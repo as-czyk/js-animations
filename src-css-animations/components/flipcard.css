@@ -1,0 +1,45 @@
+.flashcard {
+    width: 80%;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: 750ms ease;
+}
+
+#flashface__front__info {
+    font-weight: 100;
+    font-size: 24px;
+    transform: translate(-50%, -50%);
+    margin-left: 33%;
+}
+
+.flashface {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 100px;
+    backface-visibility: hidden;
+}
+
+.card__flipped {
+    transform: rotateY(180deg)
+}
+
+.flashface__front {
+    transition: 250ms ease;
+    background: #5BC0BE;
+    color: #fff
+}
+
+.flashface__back {
+    background-color: #3A506B;
+    transform: rotateY(180deg);
+    color: #fff
+}
+
+#flashface__back__info {
+    font-size: 24px;
+    font-weight: 100;
+    margin-left: 33%;
+}
