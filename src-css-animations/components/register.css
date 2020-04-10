@@ -55,6 +55,7 @@ p {
     margin-top: 40px;
     color: white;
     font-size: 16px;
+    cursor: pointer;
 }
 
 #text__login {
@@ -175,4 +176,11 @@ input[type="password"]
     75% {transform: translate3d(3px, 0, 0)}
     90% {transform: translate3d(-3px, 0, 0);}
     100% {transform: translate3d(1px, 0, 0);}
+}
+
+.errormessage {
+    font-size: 10px;
+    color: black;
+    margin: 0px;
+    padding-left: 10px;
 }

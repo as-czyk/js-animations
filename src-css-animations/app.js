@@ -160,23 +160,32 @@ validateUserInput = () => {
 
     const userinput = getInputValue();
 
-    const userValidation = validateUser(userinput.username)
+    const usernameValidation = validateUser(userinput.username)
     const emailValidation = validateEmail(userinput.email)
     const passwordValidation = validatePassword(userinput.password)
 
-    
-
-    let errors = [userValidation.errorType, emailValidation.errorType, passwordValidation.errorType]
-    console.log(errors)
-
-
-    if (userValidation.validation && emailValidation.validation && passwordValidation.validation) {
+    if (usernameValidation.validation && emailValidation.validation && passwordValidation.validation) {
         console.log('Register OK')
     } else {
+
+        let errors = [usernameValidation.errorType, emailValidation.errorType, passwordValidation.errorType]
+        let filters = errors.filter(function(x) {
+            return x !== undefined;
+        })
         
-        for (error of errors) {
-            let inputClass = document.querySelector(`.input__icon__${error}`);
+        for (filter of filters) {
+            let inputClass = document.querySelector(`.input__icon__${filter}`);
+            let errorMessage = document.querySelector(`#errormessage__${filter}`)
             inputClass.classList.toggle('swiggle__error__shake')
+            
+            let message = `${filter}Validation.errorMessage`
+            console.log(message)
+            errorMessage.innerHTML = message
+            
+            setTimeout(function() {
+                inputClass.classList.remove('swiggle__error__shake')
+                errorMessage.innerHTML = ''
+            }, 2000)
         }   
     }
 }
@@ -187,7 +196,7 @@ swiggleButton.addEventListener('click', () => {
     let x = setInterval(function(){
         swiggleInput.classList.remove('swiggle__error__shake')
         clearInterval(x)
-    }, 2000)
+    }, 4000)
 })
 
 flashcard.addEventListener('click', () => {
