@@ -18,6 +18,19 @@ const progressButton = document.querySelector('#progress__button')
 //Hamburger Effect
 const hamburgerMenu = document.querySelector('.hamburger__menu')
 
+//REGISTER VALIDATOR
+const inputFields = document.querySelectorAll('.input__style')
+
+const inputUsername = document.querySelector('#username')
+const inputEmail = document.querySelector('#email')
+const inputPassword = document.querySelector('#password')
+
+const registerButton = document.querySelector('#registerButton')
+
+
+
+
+
 /* Helper Functions */ 
 
 /**
@@ -66,6 +79,38 @@ updateProgress = () => {
     }     
 }
 
+/**
+* @description Get Value From Input Fields
+*/
+getInputValue = () => {
+
+    let username = inputUsername.value
+    let email = inputEmail.value
+    let password = inputPassword.value
+
+    return {
+        username: username,
+        email: email,
+        password: password
+    }
+}
+
+/**
+* @description Validate User Input
+*/
+
+validateUserInput = () => {
+
+    const userinput = getInputValue();
+    
+
+}
+
+
+
+
+
+
 /* Event Listeners */ 
 swiggleButton.addEventListener('click', () => {
     swiggleInput.classList.add('swiggle__error__shake')
@@ -89,4 +134,8 @@ progressButton.addEventListener('click', () => {
 
 hamburgerMenu.addEventListener('click', () => {
     hamburgerMenu.classList.toggle('mobile__menu__opened')
+})
+
+registerButton.addEventListener('click', () => {
+    getInputValue();
 })

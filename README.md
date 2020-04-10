@@ -1,6 +1,6 @@
 # js-animations 
 
-> JavaScript Animations
+> JavaScript and CSS Animations
 
 ### Clone
 

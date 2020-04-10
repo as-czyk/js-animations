@@ -1,0 +1,144 @@
+p {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login__form {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-areas: 
+    "log reg";
+    width: 65%;
+    height: 65vh;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.login__box {
+    grid-area: log;
+    background: rgb(28,246,200);
+    background: linear-gradient(27deg, rgba(28,246,200,1) 35%, rgba(17,226,160,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    opacity: 0.9;
+}
+
+.register__box {
+    grid-area: reg;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.placeholder__login {
+    height: 100px;
+}
+
+.placeholder__register {
+    height: 30px;
+}
+
+#loginButton {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: transparent;
+    border: 1px solid white;
+    margin-top: 40px;
+    color: white;
+    font-size: 16px;
+}
+
+#text__login {
+    text-align: center;
+}
+
+.social__box  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 35%;
+    height: 60px;
+}
+
+.form__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 60%;
+    height: 200px;
+    margin-top: 30px;
+}
+
+#registerButton {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #11e2a0;
+    border: none;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#registerButton:focus {
+    outline: 0;
+}
+
+#loginButton:focus {
+    outline: 0;
+}
+
+.social__icon__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 5px;
+    border-radius: 4em;
+    border: 1px solid #444;
+}
+
+.input__style {
+    height: 40px;
+    width: 90%;
+    background-color: #f4f8f7;
+    border: none;
+}
+
+.input__style:focus {
+    outline: none;
+}
+
+.input__icon {
+    width: 100%;
+    background-color: #f4f8f7;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+}
+
+input[type="text"]
+{
+    font-size:16px;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 10px;
+}
+
+input[type="password"]
+{
+    font-size:16px;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 10px;
+}
