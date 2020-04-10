@@ -120,7 +120,25 @@ p {
     outline: none;
 }
 
-.input__icon {
+.input__icon__username {
+    width: 100%;
+    background-color: #f4f8f7;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.input__icon__email {
+    width: 100%;
+    background-color: #f4f8f7;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.input__icon__password {
     width: 100%;
     background-color: #f4f8f7;
     display: flex;
@@ -141,4 +159,20 @@ input[type="password"]
     font-size:16px;
     font-family: 'Roboto', sans-serif;
     padding-left: 10px;
+}
+
+.swiggle__error__shake {
+    animation: shake 0.5s;
+    border: 2px solid red;
+}
+
+@keyframes shake {
+    0% {transform: translate3d(-1px, 0, 0)}
+    15% {transform: translate3d(3px, 0, 0)}
+    30% {transform: translate3d(-3px, 0, 0)}
+    45% {transform: translate3d(6px, 0, 0)}
+    60% {transform: translate3d(-6px, 0, 0)}
+    75% {transform: translate3d(3px, 0, 0)}
+    90% {transform: translate3d(-3px, 0, 0);}
+    100% {transform: translate3d(1px, 0, 0);}
 }

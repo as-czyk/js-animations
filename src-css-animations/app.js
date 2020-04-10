@@ -28,9 +28,6 @@ const inputPassword = document.querySelector('#password')
 const registerButton = document.querySelector('#registerButton')
 
 
-
-
-
 /* Helper Functions */ 
 
 /**
@@ -96,20 +93,93 @@ getInputValue = () => {
 }
 
 /**
+ * @description Validate Username
+ * @param {elem} Username to validate
+ */
+
+validateUser = (elem) => {
+
+    if (elem.length >= 4) {
+        return  {
+            validation: true
+        }
+    }
+    return {
+        validation: false,
+        errorType: 'username',
+        errorMessage: 'The Username must have at least 4 Characters'
+    }
+}
+
+/**
+* @description Validate E-Mail Adress
+* @param {elem} Email Adress to validate
+*/
+
+validateEmail = (elem) => {
+
+    if (elem.length >= 8 && elem.includes('@')) {
+        return {
+            validation: true
+        }
+    }
+
+    return {
+        validation: false,
+        errorType: 'email',
+        errorMessage: 'Please enter a valid E-Mail'
+    }
+
+}
+
+/**
+ * @description Validate the Password
+ * @param {elem} Password to validate
+ */
+
+validatePassword = (elem) => {
+
+    if (elem.length >= 8) {
+        return {
+            validation: true
+        } 
+    }
+    return {
+        validation: false,
+        errorType: 'password',
+        errorMessage: 'Your password should have eight characzers'
+    }
+
+}
+
+/**
 * @description Validate User Input
 */
 
 validateUserInput = () => {
 
     const userinput = getInputValue();
+
+    const userValidation = validateUser(userinput.username)
+    const emailValidation = validateEmail(userinput.email)
+    const passwordValidation = validatePassword(userinput.password)
+
     
 
+    let errors = [userValidation.errorType, emailValidation.errorType, passwordValidation.errorType]
+    console.log(errors)
+
+
+    if (userValidation.validation && emailValidation.validation && passwordValidation.validation) {
+        console.log('Register OK')
+    } else {
+        
+        for (error of errors) {
+            let inputClass = document.querySelector(`.input__icon__${error}`);
+            inputClass.classList.toggle('swiggle__error__shake')
+        }   
+    }
 }
-
-
-
-
-
 
 /* Event Listeners */ 
 swiggleButton.addEventListener('click', () => {
@@ -137,5 +207,5 @@ hamburgerMenu.addEventListener('click', () => {
 })
 
 registerButton.addEventListener('click', () => {
-    getInputValue();
+    validateUserInput();
 })
