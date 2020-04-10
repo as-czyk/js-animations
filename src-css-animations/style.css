@@ -127,6 +127,18 @@ body {
     height: 70px;
 }
 
+.validator__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+    height: 70vh;
+    margin: 5px;
+    background-image: url(../src-counter/skyline.jpg);
+    background-size: cover;
+}
+
 .javascript__box {
     display: flex;
     flex-direction: column;
@@ -136,6 +148,5 @@ body {
     height: 70vh;
     border: 1px solid red;
     margin: 5px;
-    background-image: url(../src-counter/skyline.jpg);
     background-size: cover;
 }
