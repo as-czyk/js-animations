@@ -26,7 +26,7 @@ const inputEmail = document.querySelector('#email')
 const inputPassword = document.querySelector('#password')
 
 const registerButton = document.querySelector('#registerButton')
-
+const errorMessages = document.querySelectorAll('[id^=errormessage__]')
 
 /* Helper Functions */ 
 
@@ -107,7 +107,7 @@ validateUser = (elem) => {
     return {
         validation: false,
         errorType: 'username',
-        errorMessage: 'The Username must have at least 4 Characters'
+        errorMessage: 'Your Username must have at least four characters'
     }
 }
 
@@ -127,7 +127,7 @@ validateEmail = (elem) => {
     return {
         validation: false,
         errorType: 'email',
-        errorMessage: 'Please enter a valid E-Mail'
+        errorMessage: 'Please enter a valid e-mail'
     }
 
 }
@@ -147,7 +147,7 @@ validatePassword = (elem) => {
     return {
         validation: false,
         errorType: 'password',
-        errorMessage: 'Your password should have eight characzers'
+        errorMessage: 'Your password should have eight characters'
     }
 
 }
@@ -165,27 +165,31 @@ validateUserInput = () => {
     const passwordValidation = validatePassword(userinput.password)
 
     if (usernameValidation.validation && emailValidation.validation && passwordValidation.validation) {
-        console.log('Register OK')
+        console.log('Sending Data to backend')
+        for (errorMessage of errorMessages) {
+            errorMessage.innerHTML = ''
+        }
     } else {
 
         let errors = [usernameValidation.errorType, emailValidation.errorType, passwordValidation.errorType]
         let filters = errors.filter(function(x) {
             return x !== undefined;
         })
-        
+
         for (filter of filters) {
             let inputClass = document.querySelector(`.input__icon__${filter}`);
             let errorMessage = document.querySelector(`#errormessage__${filter}`)
             inputClass.classList.toggle('swiggle__error__shake')
-            
-            let message = `${filter}Validation.errorMessage`
-            console.log(message)
-            errorMessage.innerHTML = message
-            
-            setTimeout(function() {
+             if (filter == "username") {
+                errorMessage.innerHTML = usernameValidation.errorMessage
+             } else if (filter == "email") {
+                errorMessage.innerHTML = emailValidation.errorMessage
+             } else {
+                errorMessage.innerHTML = passwordValidation.errorMessage
+             }
+             setTimeout(function(){
                 inputClass.classList.remove('swiggle__error__shake')
-                errorMessage.innerHTML = ''
-            }, 2000)
+             }, 6000)
         }   
     }
 }

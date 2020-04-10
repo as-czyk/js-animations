@@ -162,6 +162,10 @@ input[type="password"]
     padding-left: 10px;
 }
 
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #f4f8f7 inset;
+}
+
 .swiggle__error__shake {
     animation: shake 0.5s;
     border: 2px solid red;
