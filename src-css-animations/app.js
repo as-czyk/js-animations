@@ -17,8 +17,10 @@ const progressButton = document.querySelector('#progress__button')
 
 //Hamburger Effect
 const hamburgerMenu = document.querySelector('.hamburger__menu')
+const navbar = document.querySelector('.navigation')
+const navLinks = document.querySelectorAll('.navlinks li')
 
-//REGISTER VALIDATOR
+//Register Validator
 const inputFields = document.querySelectorAll('.input__style')
 
 const inputUsername = document.querySelector('#username')
@@ -27,6 +29,9 @@ const inputPassword = document.querySelector('#password')
 
 const registerButton = document.querySelector('#registerButton')
 const errorMessages = document.querySelectorAll('[id^=errormessage__]')
+
+//Mobile Menu
+const mobileMenu = document.querySelector('.hamburger__mobile__menu')
 
 /* Helper Functions */ 
 
@@ -217,6 +222,19 @@ progressButton.addEventListener('click', () => {
 
 hamburgerMenu.addEventListener('click', () => {
     hamburgerMenu.classList.toggle('mobile__menu__opened')
+})
+
+mobileMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('mobile__menu__opened')
+    navbar.classList.toggle('navigation__active')
+
+    navLinks.forEach((link, index) => {
+        if (link.style.animation) {
+            link.style.animation = ''
+        } else {
+            link.style.animation = `fadeInLinks 0.5s ease forwards ${index/5 + 0.5}s`
+        }
+    })
 })
 
 registerButton.addEventListener('click', () => {

@@ -1,0 +1,88 @@
+.mobile__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70vh;
+    width: 350px;
+    border-radius: 25px;
+    margin: 10px;
+    background-image: url(../resources/mobile.jpg);
+    background-size: cover;
+}
+
+/** Style for Hamburger Menu **/
+.hamburger__mobile__menu {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+    position: absolute;
+    left: 918px;
+    z-index: 2;
+}
+
+.hamburger__part {
+    width: 30px;
+    background-color: #5BC0BE;
+    height: 3px;
+    margin-top: 6px;
+    border-radius: 2px;
+    transition: 400ms ease;
+}
+
+.hamburger__part:first-of-type {
+    margin-top: none;
+}
+
+.mobile__menu__opened .hamburger__part:nth-child(1) {
+    transform: translateY(9px) translateX(0px) rotate(315deg)
+}
+
+.mobile__menu__opened .hamburger__part:nth-child(2) {
+    transform: rotate(45deg)
+}
+
+.mobile__menu__opened .hamburger__part:nth-child(3) {
+    display: none
+}
+
+/** Nav links Style **/
+.navlinks li{
+    list-style: none;
+    padding: 15px;
+    opacity: 0;
+}
+
+.navlinks {
+    position: absolute;
+    text-align: center;
+    right: 30px;
+    top: 65px;
+    cursor: pointer;
+}
+
+.navigation {
+    background-color: #f4f8f7;
+    opacity: 0.8;
+    width: 50%;
+    border-radius: 25px;
+    transform: translateX(150%);
+    transition: transform 0.5s ease-in;
+    height: 100vh;
+}
+
+.navigation__active {
+    transform: translateX(50.5%)
+}
+
+/** Animation to fade in*/
+@keyframes fadeInLinks {
+    from {
+        opacity: 0;
+        transform: translateX(50px)
+    } to {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}

@@ -7,6 +7,9 @@
 @import url(../src-css-animations/components/progress.css);
 @import url(../src-css-animations/components/hamburger.css);
 @import url(../src-css-animations/components/register.css);
+@import url(../src-css-animations/components/mobile.css);
+
+
 
 /* Typography Rules */ 
 
@@ -145,8 +148,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 70vh;
+    height: 80vh;
     border: 1px solid red;
     margin: 5px;
-    background-size: cover;
 }
