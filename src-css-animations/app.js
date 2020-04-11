@@ -40,7 +40,10 @@ const listWrapper = document.querySelector('.list__wrapper')
 const dashboard = document.querySelector('#dashboard')
 const dashboardIcon = document.querySelector('#dashboard__svg')
 
-const ctnButton = document.querySelector('#ctnButton')
+const allContent = document.querySelectorAll('[class^=ctn__nodisplay__')
+const dashContent = document.querySelector('.ctn__nodisplay__Dashboard')
+const classContent = document.querySelector('.ctn__nodisplay__Classes')
+
 
 /* Helper Functions */ 
 
@@ -252,24 +255,35 @@ registerButton.addEventListener('click', () => {
 
 
 tabLinks.forEach(link => {
+
     link.addEventListener('click', () => {
+
+        console.log(link)
+
+        tabLinks.forEach (item => {
+            let div = item.parentElement
+            div.classList.remove('nav__list__active')
+
+            let svg = item.previousElementSibling
+            svg.classList.remove('svg__active')
+
+        })
 
         let parent = link.parentElement
         parent.classList.toggle('nav__list__active')
 
         let slibling = link.previousElementSibling
         slibling.classList.toggle('svg__active')
-  
+
+        allContent.forEach(item => {
+            item.classList.remove('ctn__tab__dashboard')
+            item.classList.remove('ctn__tab__classes')
+        })
+
+        if (link.innerHTML == "Dashboard") {
+            dashContent.classList.toggle('ctn__tab__dashboard')
+        } else if (link.innerHTML == 'Classes') {
+            classContent.classList.toggle('ctn__tab__classes')
+        }
     })
 })
-
-/*
-dashboard.addEventListener('click', () => {
-    
-    
-    
-    
-    listWrapper.classList.toggle('nav__list__active')
-    dashboardIcon.classList.toggle('svg__active')
-}) 
-*/

@@ -89,10 +89,10 @@
 .ctn__header {
     background: rgb(255,163,85);
     background: linear-gradient(90deg, rgba(255,163,85,1) 0%, rgba(250,110,109,1) 100%);
-    width: 80%;
+    width: 90%;
     height: 20vh;
     border-radius: 20px;
-    margin: 100px;
+    margin: 50px;
 }
 
 .ctn__button {
@@ -103,8 +103,64 @@
     background-color: transparent;
     color: #fff;
     font-size: 20px;
+    margin: 20px;
 }
 
 .ctn__button:focus {
     outline: 0
 }
+
+.ctn__nodisplay__Dashboard {
+    display: none;
+}
+
+.ctn__nodisplay__Classes {
+    display: none;
+}
+
+.ctn__tab__dashboard {
+    width: 85%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+}
+
+.ctn__tab__classes {
+    width: 85%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+}
+
+.ctn__tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #fff
+}
+
+.ctn__boxes__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 250px;
+}
+
+.ctn__box {
+    background-color: #5f44a8;
+    width: 30%;
+    height: 200px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
