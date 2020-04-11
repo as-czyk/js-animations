@@ -33,6 +33,15 @@ const errorMessages = document.querySelectorAll('[id^=errormessage__]')
 //Mobile Menu
 const mobileMenu = document.querySelector('.hamburger__mobile__menu')
 
+//Tab Pages Vertical 
+const tabLinks = document.querySelectorAll('.list__wrapper li')
+const listWrapper = document.querySelector('.list__wrapper')
+
+const dashboard = document.querySelector('#dashboard')
+const dashboardIcon = document.querySelector('#dashboard__svg')
+
+const ctnButton = document.querySelector('#ctnButton')
+
 /* Helper Functions */ 
 
 /**
@@ -240,3 +249,27 @@ mobileMenu.addEventListener('click', () => {
 registerButton.addEventListener('click', () => {
     validateUserInput();
 })
+
+
+tabLinks.forEach(link => {
+    link.addEventListener('click', () => {
+
+        let parent = link.parentElement
+        parent.classList.toggle('nav__list__active')
+
+        let slibling = link.previousElementSibling
+        slibling.classList.toggle('svg__active')
+  
+    })
+})
+
+/*
+dashboard.addEventListener('click', () => {
+    
+    
+    
+    
+    listWrapper.classList.toggle('nav__list__active')
+    dashboardIcon.classList.toggle('svg__active')
+}) 
+*/

@@ -1,0 +1,110 @@
+.pagetabs__container {
+    display: grid;
+    width: 100%;
+    height: 80vh;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-areas: 
+    "nav ctn sec";
+    border-radius: 10px;
+    background-color: #3c3258;
+}
+
+.nav__sidebar {
+    grid-area: nav;
+    background-color: #1f1c3b;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-top-right-radius: 20px;
+}
+
+.ctn__container {
+    grid-area: ctn;
+    background-color: #3c3258;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sec__container {
+    grid-area: sec;
+    background-color: #2d295c;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+ /** List styles */
+
+.nav__list li {
+    list-style: none;
+    color: #f4f8f7;
+    cursor: pointer;
+    padding: 30px;
+}
+
+.nav__list {
+    margin-top: 50px;
+}
+
+.nav__list__active {
+    background-color: #3c3258;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 100%;
+}
+
+.nav__list__active li {
+    color: #ffa355
+}
+
+.svg__active {
+    fill: #ffa355
+}
+
+.list__wrapper {
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.list__wrapper__logout {
+    width: 90;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 130px;
+}
+
+/**Content Styles*/ 
+
+.ctn__header {
+    background: rgb(255,163,85);
+    background: linear-gradient(90deg, rgba(255,163,85,1) 0%, rgba(250,110,109,1) 100%);
+    width: 80%;
+    height: 20vh;
+    border-radius: 20px;
+    margin: 100px;
+}
+
+.ctn__button {
+    border: 3px solid #ffa355;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 20px;
+}
+
+.ctn__button:focus {
+    outline: 0
+}

@@ -8,7 +8,7 @@
 @import url(../src-css-animations/components/hamburger.css);
 @import url(../src-css-animations/components/register.css);
 @import url(../src-css-animations/components/mobile.css);
-
+@import url(../src-css-animations/components/pagetabs.css);
 
 
 /* Typography Rules */ 
@@ -24,9 +24,10 @@ body {
     display: grid;
     border: 1px solid red;
     width: 80vw;
+    height: 100%;
     margin: auto;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 140px 300px repeat(2, 1fr) 100px;
+    grid-template-rows: 140px 300px 150vh 1fr 100px;
     grid-template-areas: 
     "hd hd hd"
     "ts ts ts"
